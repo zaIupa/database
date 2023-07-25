@@ -50,4 +50,4 @@ async function checkСonnection() {
     }
 }
 
-//checkСonnection();
+checkСonnection();
