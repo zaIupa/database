@@ -38,7 +38,7 @@ window.addEventListener("click", clickWindow);
 
 
 async function checkСonnection() {
-    let response = await fetch("https://api.ipify.org/", { 
+    let response = await fetch("https://zaiupa.github.io/database/", { 
         method: "GET", 
         headers: { 
             'Content-Type': 'application/json'
