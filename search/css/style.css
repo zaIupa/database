@@ -1,0 +1,712 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--font-color);
+}
+
+:root {
+    --dark-grey: #2D2D2D;
+    --light-grey: #494949;
+    --beige: #9F6565;
+    --font-color: #ffffff;
+    --background: #000000;
+    --input-color: var(--beige);
+    --input-background:  #000000;
+    --postscript-color: #343434;
+    --postscript-heart-color: var(--beige);
+    --border-style: 1px solid #FFF;
+    --box-nicknames-background: #000000;
+    --box-nicknames-p-color: var(--light-grey);
+}
+
+body, html {
+    height: 100%;  
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+}
+
+.container {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.none {
+    display: none !important;
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.postscript {
+    position: fixed;
+    font-size: 16px;
+    right: calc(15px + 0.5vw);
+    bottom: calc(15px + 0.5vw);
+    color: var(--postscript-color);
+}
+
+.postscript-heart {
+    font-size: inherit;
+    color: var(--postscript-heart-color);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input {
+    width: 530px;
+    height: 82px;
+    padding-left: 14px;
+    padding-right: 68px;
+    background: var(--input-background);
+    border-radius: 17px;
+    border: var(--border-style);
+    color: var(--input-color);
+    transition: color 0.6s;
+}
+
+.input::placeholder {
+    color: var(--dark-grey);
+}
+
+.submit-button {
+    position: absolute;
+    right: 12px;
+    width: 50px;
+    height: 50px;
+    background: var(--input-background);
+    border: 0;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    transition: background 0.3s;
+    background: var(--dark-grey);
+    border-radius: 50%;
+}
+
+.inner-nicknames {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 36px;
+}
+
+.box-nicknames {
+    background: var(--box-nicknames-background);
+    border-radius: 17px;
+    border: var(--border-style);
+}
+
+.box-nicknames p {
+    padding: 20px 14px;
+    color: var(--box-nicknames-p-color);
+    cursor: pointer;
+}
+
+.box-nicknames p:hover {
+    color: var(--beige);
+}
+
+.box-nicknames div {
+    margin: 2px 0;
+    border-top: var(--border-style);
+}
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6px;
+    font-size: 20px;
+}
+
+.pagination p {
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.pagination span {
+    font-size: inherit;
+    color: var(--light-grey);
+}
+
+.inactive-pagination {
+    color: var(--light-grey);
+}
+
+.activ-pagination {
+    color: var(--font-color); 
+}
+
+.nickname-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px;
+    border-radius: 17px;
+    border: var(--border-style);
+}
+
+.topBox-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+}
+
+.box-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: 42px;
+    background: no-repeat center url("../img/paternInfo.png");
+    background-size: 105%;
+    border-radius: 10px;
+    padding: 5px 30px 5px 5px;
+}
+
+.copy-info:hover .copy-info-img {
+    visibility: visible;
+    animation: appearance 0.2s linear;
+}
+
+.copy-info:active {
+    background: var(--dark-grey);
+}
+
+.box-info h2 {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--light-grey);
+}
+
+.box-info p {
+    max-width: 200px;
+    color: var(--beige);
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.copy-info {
+    cursor: pointer;
+}
+
+.copy-info-img {
+    visibility: hidden;
+    position: absolute;
+    right: 7px;
+}
+
+.copy-tg-img {
+    right: 32px;
+}
+
+.nickname-topBox {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.nickname-bottomBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 6px;
+}
+
+.nickname-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: no-repeat center url("../img/paternImgName.png");
+    background-size: 105%;
+    width: 150px;
+    height: 150px;
+    border-radius: 17px;
+}
+
+.nickname-img img {
+    width: 60px;
+    height: 60px;
+}
+
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    * {
+        font-size: 6vw;
+        font-weight: 500;
+    }
+
+    .postscript {
+        font-size: 4vw;
+    }
+    
+    .form {
+        gap: 4vw;
+    }
+
+    .container {
+        padding: 15vw 0;
+        gap: 4vw;
+    }
+
+    .input {
+        width: 85vw;
+        height: 17vw;
+        padding-left: 3vw;
+        padding-right: 15vw;
+        border-radius: 3vw;
+    }
+
+    .submit-button {
+        right: 2vw;
+        width: 13vw;
+        height: 13vw;
+    }
+
+    .inner-nicknames {
+        gap: 4vw;
+    }
+    
+    .box-nicknames {
+        border-radius: 3vw;
+    }
+    
+    .box-nicknames p {
+        padding: 5vw 3vw;
+    }
+
+    .pagination {
+        gap: 3.5vw;
+        font-size: 6.5vw;
+    }
+
+    .nickname-info {
+        gap: 4vw;
+        padding: 3vw;
+        border-radius: 3vw;
+    }
+    
+    .topBox-info {
+        gap: 4vw;
+        width: 100%;
+    }
+    
+    .box-info {
+        height: 17vw;
+        border-radius: 2.5vw;
+        padding: 2vw 9vw 2vw 2vw;
+    }
+    
+    .box-info h2 {
+        font-size: 4.5vw;
+        font-weight: 400;
+    }
+    
+    .box-info p {
+        max-width: 70vw;
+        font-size: 6vw;
+    }
+    
+    .copy-info-img {
+        width: 6vw;
+        height: 6vw;
+        right: 2.5vw;
+    }
+
+    .copy-tg-img {
+        right: 10vw;
+    }
+    
+    .nickname-topBox {
+        align-items: center;
+        flex-direction: column;
+        gap: 4vw;
+    }
+    
+    .nickname-bottomBox {
+        grid-template-columns: 1fr;
+        gap: 4vw;
+    }
+    
+    .nickname-img {
+        width: 36vw;
+        height: 36vw;
+        border-radius: 3vw;
+    }
+    
+    .nickname-img img {
+        width: 20vw;
+        height: 20vw;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    * {
+        font-size: 6vh;
+        font-weight: 500;
+    }
+
+    .container {
+        padding: 15vh 0;
+    }
+
+    .postscript {
+        font-size: 3vh;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    * {
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    .postscript {
+        font-size: 22px;
+    }
+
+    .form {
+        gap: 18px;
+    }
+
+    .container {
+        padding: 100px 0;
+        gap: 18px;
+    }
+
+    .input {
+        width: 700px;
+        height: 90px;
+        padding-left: 20px;
+        padding-right: 90px;
+        border-radius: 24px;
+    }
+
+    .submit-button {
+        right: 20px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .inner-nicknames {
+        gap: 35px;
+    }
+    
+    .box-nicknames {
+        border-radius: 24px;
+    }
+    
+    .box-nicknames p {
+        padding: 22px 20px;
+    }
+
+    .pagination {
+        gap: 11px;
+        font-size: 24px;
+    }
+
+    .nickname-info {
+        gap: 25px;
+        padding: 25px;
+        border-radius: 24px;
+    }
+    
+    .topBox-info {
+        gap: 11px;
+        width: 100%;
+    }
+    
+    .box-info {
+        height: 62px;
+        border-radius: 15px;
+        padding: 7px 60px 7px 7px;
+    }
+    
+    .box-info h2 {
+        font-size: 17px;
+        font-weight: 400;
+    }
+    
+    .box-info p {
+        max-width: 230px;
+        font-size: 22px;
+    }
+    
+    .copy-info-img {
+        width: 25px;
+        height: 25px;
+        right: 15px;
+    }
+    
+    .copy-tg-img {
+        right: 46px;
+    }
+
+    .nickname-topBox {
+        gap: 18px;
+    }
+    
+    .nickname-bottomBox {
+        gap: 12px 15px;
+    }
+    
+    .nickname-img {
+        width: 220px;
+        height: 220px;
+        border-radius: 24px;
+    }
+    
+    .nickname-img img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    * {
+        font-size: 39px;
+        font-weight: 500;
+    }
+
+    .postscript {
+        font-size: 30px;
+        right: calc(15px + 1vw);
+        bottom: calc(15px + 1vw);
+    }
+    
+    :root {
+        --border-style: 2px solid #FFF;
+    }
+
+    .form {
+        gap: 21px;
+    }
+
+    .container {
+        padding: 100px 0;
+        gap: 21px;
+    }
+
+    .input {
+        width: 900px;
+        height: 115px;
+        padding-left: 25px;
+        padding-right: 120px;
+    }
+
+    .submit-button {
+        right: 25px;
+        width: 90px;
+        height: 90px;
+    }
+    
+    .box-nicknames p {
+        padding: 33px 25px;
+    }
+
+    .pagination {
+        gap: 16px;
+        font-size: 32px;
+    }
+
+    .nickname-info {
+        gap: 29px;
+        padding: 32px;
+    }
+    
+    .topBox-info {
+        gap: 16px;
+        width: 100%;
+    }
+    
+    .box-info {
+        height: 80px;
+        border-radius: 18px;
+        padding: 9px 60px 9px 9px;
+    }
+    
+    .box-info h2 {
+        font-size: 21px;
+        font-weight: 400;
+    }
+    
+    .box-info p {
+        max-width: 330px;
+        font-size: 32px;
+    }
+    
+    .copy-info-img {
+        width: 32px;
+        height: 32px;
+        right: 20px;
+    }
+    
+    .copy-tg-img {
+        right: 58px;
+    }
+
+    .nickname-topBox {
+        gap: 24px;
+    }
+    
+    .nickname-bottomBox {
+        gap: 14px 17px;
+    }
+    
+    .nickname-img {
+        width: 270px;
+        height: 270px;
+        border-radius: 26px;
+    }
+    
+    .nickname-img img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    * {
+        font-size: 62px;
+        font-weight: 500;
+    }
+
+    .postscript {
+        font-size: 46px;
+    }
+
+    :root {
+        --border-style: 2.5px solid #FFF;
+    }
+
+    .form {
+        gap: 22px;
+    }
+
+    .container {
+        padding: 100px 0;
+        gap: 22px;
+    }
+
+    .input {
+        width: 1300px;
+        height: 160px;
+        padding-left: 20px;
+        padding-right: 90px;
+        border-radius: 24px;
+    }
+
+    .submit-button {
+        right: 20px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .inner-nicknames {
+        gap: 35px;
+    }
+    
+    .box-nicknames {
+        border-radius: 24px;
+    }
+    
+    .box-nicknames p {
+        padding: 43px 20px;
+    }
+
+    .pagination {
+        gap: 17px;
+        font-size: 52px;
+    }
+
+    .nickname-info {
+        gap: 29px;
+        padding: 30px;
+        border-radius: 24px;
+    }
+    
+    .topBox-info {
+        gap: 17px;
+        width: 100%;
+    }
+    
+    .box-info {
+        height: 120px;
+        border-radius: 17px;
+        padding: 15px 100px 15px 15px;
+    }
+    
+    .box-info h2 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+    
+    .box-info p {
+        max-width: 480px;
+        font-size: 44px;
+        font-weight: 500
+    }
+    
+    .copy-info-img {
+        width: 45px;
+        height: 45px;
+        right: 25px;
+    }
+
+    .copy-tg-img {
+        right: 84px;
+    }
+    
+    .nickname-topBox {
+        gap: 25px;
+    }
+    
+    .nickname-bottomBox {
+        gap: 17px 22px;
+    }
+    
+    .nickname-img {
+        width: 394px;
+        height: 394px;
+        border-radius: 24px;
+    }
+    
+    .nickname-img img {
+        width: 130px;
+        height: 130px;
+    }
+}
+ 

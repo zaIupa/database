@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <p>Введите никнейм</p>
+            <div class="input-box">
+                <input type="text" name="nickname" class="input" id="input" placeholder="v0ky...">
+                <button class="submit-button" id="submitButton">
+                    ->
+                </button>
+            </div>
+        </div>
+
+        <div class="inner-nicknames none firstRun">
+            <div class="box-nicknames" id="boxNicknames"></div>
+            <div id="pagination" class="pagination"></div>
+        </div> 
+        
+        <div class="nickname-info none" id="nicknameInfo">
+            <div class="nickname-topBox">
+                <div class="nickname-img">
+                    <img src="" id="nicknameImg">
+                </div>
+                <div class="topBox-info">
+                    <div class="box-info copy-info">
+                        <h2>Nickname</h2>
+                        <p id="nickname"></p>
+                        <img src="./img/copy.png" class="copy-info-img">
+                    </div>
+                    <div class="box-info copy-info">
+                        <h2>Registration Date</h2>
+                        <p id="regdate"></p>
+                        <img src="./img/copy.png" class="copy-info-img">
+                    </div>
+                    <div class="box-info copy-info">
+                        <h2>First IP Address</h2>
+                        <p id="firstIp"></p>
+                        <img src="./img/copy.png" class="copy-info-img">
+                    </div>
+                </div>
+            </div>
+            <div class="nickname-bottomBox">
+                <div class="box-info copy-info">
+                    <h2>Last IP Address</h2>
+                    <p id="lastIp"></p>
+                    <img src="./img/copy.png" class="copy-info-img">
+                </div>
+                <div class="box-info copy-info">
+                    <h2>UUID (License)</h2>
+                    <p id="premiumId"></p>
+                    <img src="./img/copy.png" class="copy-info-img">
+                </div>
+                <div class="box-info copy-info">
+                    <h2>Password (Hashed)</h2>
+                    <p id="password"></p>
+                    <img src="./img/copy.png" class="copy-info-img">
+                </div>
+                <div class="box-info copy-info">
+                    <h2>UUID (Crack)</h2>
+                    <p id="uniqueId"></p>
+                    <img src="./img/copy.png" class="copy-info-img">
+                </div>
+                <div class="box-info copy-info">
+                    <h2>Telegram ID</h2>
+                    <p id="telegramId"></p>
+                    <img src="./img/linkTg.png" class="copy-info-img copy-tg-img">
+                    <img src="./img/copy.png" class="copy-info-img copy-button">
+                </div>
+                <div class="box-info copy-info">
+                    <h2>Role</h2>
+                    <p id="role"></p>
+                    <img src="./img/copy.png" class="copy-info-img">
+                </div>
+            </div>
+        </div>       
+    </div>
+    <div class="postscript">
+        made with <span class="postscript-heart">&lt;3</span> from @dengimod3
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>

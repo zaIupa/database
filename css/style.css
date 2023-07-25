@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--font-color);
+}
+
+:root {
+    --font-color: #ffffff;
+    --background: #000000;
+    --postscript-color: #343434;
+    --postscript-heart-color: #9F6565;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+}
+
+.postscript {
+    position: absolute;
+    right: calc(15px + 0.5vw);
+    bottom: calc(15px + 0.5vw);
+    font-size: 16px;
+    color: var(--postscript-color);
+}
+
+.postscript-heart {
+    font-size: inherit;
+    color: var(--postscript-heart-color);
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.none {
+    display: none !important;
+}
+
+.secret-load {
+    position: absolute;
+    z-index: 999;
+    animation: appearance 3s linear;
+}
+
+.load-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    animation: appearance 3s linear infinite;
+}
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    * {
+        font-size: 6vw;
+        font-weight: 500;
+    }
+
+    .postscript {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    * {
+        font-size: 6vh;
+        font-weight: 500;
+    }
+
+    .postscript {
+        font-size: 3vh;
+    }
+
+    .secret-load img {
+        width: 50vh;
+        height: 50vh;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    * {
+        font-size: 38px;
+        font-weight: 500;
+    }
+
+    .postscript {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    * {
+        font-size: 48px;
+        font-weight: 500;
+    }
+
+    .postscript {
+        font-size: 30px;
+        right: calc(15px + 1vw);
+        bottom: calc(15px + 1vw);
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    * {
+        font-size: 62px;
+        font-weight: 500;
+    }
+
+    .postscript {
+        font-size: 46px;
+    }
+}
+ 
